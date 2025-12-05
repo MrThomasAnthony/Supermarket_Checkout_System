@@ -1,5 +1,7 @@
 from ShoppingCartVisitor import ShoppingCartVisitor
 from multipledispatch import dispatch
+from Book import Book
+from Fruit import Fruit
 
 class PriceCalculatorVisitor(ShoppingCartVisitor):
     def __init__(self):
@@ -7,11 +9,11 @@ class PriceCalculatorVisitor(ShoppingCartVisitor):
         
     @dispatch(Book)
     def visit(self, book: Book):
-        self._total += book.get_price()
+        self._total += book.getPrice()
         
     @dispatch(Fruit)
     def visit(self, fruit: Fruit):
-        self._total += fruit.get_price_per_kg() * fruit.get_weight()
+        self._total += fruit.getPricePerKg() * fruit.getWeight()
         
     def getTotal(self):
         return self._total

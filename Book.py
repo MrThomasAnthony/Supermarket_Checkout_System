@@ -1,6 +1,6 @@
-from ItemElement import ItemElement
+from Element import Element
 
-class Book(ItemElement):
+class Book(Element):
     def __init__(self, isbn: str, price: float):
         self._isbn = isbn
         self._price = price

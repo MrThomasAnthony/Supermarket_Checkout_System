@@ -1,6 +1,6 @@
-from ItemElement import ItemElement
+from Element import Element
 
-class Fruit(ItemElement):
+class Fruit(Element):
     def __init__(self, name: str, price_per_kg: float, weight: float):
         self._name = name
         self._price_per_kg = price_per_kg
